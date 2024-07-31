@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function updateSignature() {
+            var nome = document.getElementById('nome').value;
+            var cargo = document.getElementById('cargo').value;
+            var departamento = document.getElementById('departamento').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+
+            document.getElementById('nome-colaborador').textContent = nome;
+            document.getElementById('cargo-departamento').textContent = cargo + ' | ' + departamento;
+            document.getElementById('email-address').textContent = email;
+            document.getElementById('email-address').href = 'mailto:' + email;
+            document.getElementById('phone-number').textContent = phone;
+            document.getElementById('teams-link').href = 'https://teams.microsoft.com/l/chat/0/0?users=' + email;
+        }
+    </script>
+</head>
+<body style="margin: 0;padding: 0;font-family: Arial, sans-serif;">
+    <div class="header" style="display: flex;align-items: center;padding: 10px;background-color: #f4f4f4;border-bottom: 1px solid #ddd;">
+        <img src="logo.png" alt="Logo" style="margin-right: 20px;width: 80px;height: 60px;">
+        <div class="title" style="flex: 1;text-align: center;font-size: 24px;color: #333;">Crie sua nova assinatura!</div>
+    </div>
+
+    <form onsubmit="updateSignature(); return false;" style="max-width: 600px;margin: 20px auto;padding: 20px;border: 1px solid #ddd;border-radius: 5px;background-color: #f9f9f9;">
+        <label for="nome" style="display: block;margin-bottom: 5px;font-weight: bold;">Nome do Colaborador:</label>
+        <input type="text" id="nome" required style="width: 100%;padding: 8px;margin-bottom: 10px;border: 1px solid #ddd;border-radius: 4px;">
+
+        <label for="cargo" style="display: block;margin-bottom: 5px;font-weight: bold;">Cargo:</label>
+        <input type="text" id="cargo" required style="width: 100%;padding: 8px;margin-bottom: 10px;border: 1px solid #ddd;border-radius: 4px;">
+
+        <label for="departamento" style="display: block;margin-bottom: 5px;font-weight: bold;">Departamento:</label>
+        <input type="text" id="departamento" required style="width: 100%;padding: 8px;margin-bottom: 10px;border: 1px solid #ddd;border-radius: 4px;">
+
+        <label for="email" style="display: block;margin-bottom: 5px;font-weight: bold;">Email:</label>
+        <input type="email" id="email" required style="width: 100%;padding: 8px;margin-bottom: 10px;border: 1px solid #ddd;border-radius: 4px;">
+
+        <label for="phone" style="display: block;margin-bottom: 5px;font-weight: bold;">Phone:</label>
+        <input type="text" id="phone" required style="width: 100%;padding: 8px;margin-bottom: 10px;border: 1px solid #ddd;border-radius: 4px;">
+
+        <button type="submit" style="background-color: #007bff;color: #fff;border: none;padding: 10px 20px;border-radius: 4px;cursor: pointer;font-size: 16px;">Atualizar Assinatura</button>
+    </form>
+
+    <table class="signature-table" style="width: 500px;border-collapse: collapse;margin: 20px auto;">
+        <tbody>
+            <tr>
+                <td width="163" align="right" style="vertical-align: top;">
+                    <img class="logo" src="logo.png" width="120px" height="90px" alt="Logo" style="margin-right: 10px;">
+                </td>
+                <td class="contact-info" style="border-left: 1px solid #757575;padding-left: 20px;color: #333;font-size: 10px;">
+                    <strong id="nome-colaborador" style="font-size: 11px;">Nome do Colaborador</strong>
+                    <br>
+                    <span id="cargo-departamento">Cargo | Departamento</span><br><br>
+                    <strong>Email: </strong><a id="email-address" href="mailto:email@cheil.com" style="color: #082465; text-decoration: none;">email@cheil.com</a><br>
+                    <strong>Phone: </strong><span id="phone-number">+55 11 99999-9999</span><br>
+                    <strong>Microsoft Teams: </strong><a id="teams-link" href="https://teams.microsoft.com/l/chat/0/0?users=email@cheil.com" target="_blank" style="color: #082465; text-decoration: none;">Chat On Teams</a><br><br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer" style="max-width: 500px;margin: 20px auto;font-family: 'Aptos', Arial, sans-serif;">
+        <div class="address" style="font-size: 10px;margin: 0 auto;">
+            Av. das Nações Unidas, 14261 - 7º Andar - ALA B | Vila Gertrudes | São Paulo, SP | CEP 04794-000 | Brasil
+        </div><br>
+        <div class="disclaimer" style="font-size: 6px;margin: 0 auto;margin-bottom: 60px;text-align: justify;">
+            A mensagem acima destina-se exclusivamente ao destinatário nomeado e pode conter segredo <strong style="color: red;">comercial, tecnologia industrial ou informações privilegiadas e confidenciais </strong> protegidas pela lei aplicável, incluindo a Lei de Prevenção da Concorrência Desleal e Proteção de Segredos Comerciais. <strong style="color: red;">Qualquer divulgação, distribuição, cópia ou utilização não autorizada da informação contida nesta comunicação é estritamente proibida.</strong> Se você recebeu esta comunicação por engano, notifique o remetente por e-mail e exclua esta comunicação imediatamente.
+            <br><br>
+            The above message is intended solely for the named addressee and may contain trade secret,<strong style="color: red;">industrial technology or privileged and confidential information</strong> otherwise protected under applicable law including the Unfair Competition Prevention and Trade Secret Protection Act. <strong style="color: red;">Any unauthorized dissemination, distribution, copying or use of the information contained in this communication is strictly prohibited.</strong> If you have received this communication in error, please notify the sender by email and delete this communication immediately.
+        </div>
+    </div>
+    
+</body>
+</html>
